@@ -34,7 +34,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryAsync<EmpleadoEntity>("EmpleadoObtener");
+                var result = sql.QueryAsync<EmpleadoEntity>("exp.EmpleadoObtener");
                 return await result;
             }
             catch (Exception)
@@ -51,7 +51,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.QueryFirstAsync<EmpleadoEntity>("EmpleadoObtener", new { entity.IdEmpleado });
+                var result = sql.QueryFirstAsync<EmpleadoEntity>("exp.EmpleadoObtener", new { entity.IdEmpleado });
                 return await result;
             }
             catch (Exception)
@@ -68,7 +68,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("EmpleadoInsertar", new
+                var result = sql.ExecuteAsync("exp.EmpleadoInsertar", new
                 {
                     entity.Nombre,
                     entity.PrimerApellido,
@@ -92,7 +92,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("EmpleadoActualizar", new
+                var result = sql.ExecuteAsync("exp.EmpleadoActualizar", new
                 {
                     entity.IdEmpleado,
                     entity.Nombre,
@@ -117,7 +117,7 @@ namespace WBL
         {
             try
             {
-                var result = sql.ExecuteAsync("EmpleadoEliminar", new
+                var result = sql.ExecuteAsync("exp.EmpleadoEliminar", new
                 {
                     entity.IdEmpleado
                 });

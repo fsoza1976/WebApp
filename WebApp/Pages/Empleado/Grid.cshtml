@@ -2,3 +2,54 @@
 @model WebApp.Pages.Empleado.GridModel
 @{
 }
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Empleado
+        </div>
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nombre</th>
+                                <th>PrimerApellido</th>
+                                <th>SegundoApellido</th>
+                                <th>Edad</th>
+                                <th>FechaNacimiento</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                            <tr>
+                                <td>@item.IdEmpleado</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.PrimerApellido</td>
+                                <td>@item.SegundoApellido</td>
+                                <td>@item.Edad</td>
+                                <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdEmpleado"><i class='bx bx-edit-alt'></i></a>
+                                    <button type="button" class="btn btn-danger" onclick="EmpleadoGrid.OnClickEliminar(@item.IdEmpleado)"><i class='bx bx-trash'></i></button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script>
+        var MensajeApp = "@Html.Raw(Model.Mensaje)";
+    </script>
+    <script defer src="~/App/Empleado/Grid.js"></script>
+
+}
