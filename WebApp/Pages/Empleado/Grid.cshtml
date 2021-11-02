@@ -8,6 +8,9 @@
             Empleado
         </div>
         <div class="card-body">
+            <a class="btn btn-primary" asp-page="Edit">
+                <i class='bx bxs-add-to-queue'></i>
+            </a>
             <div class="row">
                 <div class="col-12">
                     <table id="GridView" class="table table-bordered table table-striped table-hover">
@@ -25,18 +28,18 @@
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                            <tr>
-                                <td>@item.IdEmpleado</td>
-                                <td>@item.Nombre</td>
-                                <td>@item.PrimerApellido</td>
-                                <td>@item.SegundoApellido</td>
-                                <td>@item.Edad</td>
-                                <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
-                                <td>
-                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdEmpleado"><i class='bx bx-edit-alt'></i></a>
-                                    <button type="button" class="btn btn-danger" onclick="EmpleadoGrid.OnClickEliminar(@item.IdEmpleado)"><i class='bx bx-trash'></i></button>
-                                </td>
-                            </tr>
+                                <tr>
+                                    <td>@item.IdEmpleado</td>
+                                    <td>@item.Nombre</td>
+                                    <td>@item.PrimerApellido</td>
+                                    <td>@item.SegundoApellido</td>
+                                    <td>@item.Edad</td>
+                                    <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                                    <td>
+                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdEmpleado"><i class='bx bx-edit-alt'></i></a>
+                                        <button type="button" class="btn btn-danger" onclick="EmpleadoGrid.OnClickEliminar(@item.IdEmpleado)"><i class='bx bx-trash'></i></button>
+                                    </td>
+                                </tr>
                             }
                         </tbody>
                     </table>
