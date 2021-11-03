@@ -28,8 +28,22 @@
                     <input type="number" class="form-control" asp-for="Entity.Edad" required>
                 </div>
                 <div class="form-group mb-3">
-                    <label for="Entity.FecgaNacimiento" class="form-label">Fecha Nacimiento</label>
+                    <label for="Entity.FechaNacimiento" class="form-label">Fecha Nacimiento</label>
                     <input type="date" class="form-control" asp-for="Entity.FechaNacimiento" required>
+                </div>
+                <div class="form-group mb-3">
+                    <button class="btn btn-secondary dropdown-toggle" for="Entity.TipoIdentificacion" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        Tipo Identificacion
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" asp-for="Entity.TipoIdentificacion" >
+                        <li><a class="dropdown-item" href="#">Cedula</a></li>
+                        <li><a class="dropdown-item" href="#">Pasaporte</a></li>
+                        <li><a class="dropdown-item" href="#">Cedula Juridica</a></li>
+                    </ul>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="Entity.Identificacion" class="form-label">Identificacion</label>
+                    <input type="number" class="form-control" asp-for="Entity.Identificacion" required>
                 </div>
 
                 <div class="row">

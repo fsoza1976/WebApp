@@ -74,7 +74,9 @@ namespace WBL
                     entity.PrimerApellido,
                     entity.SegundoApellido,
                     entity.Edad,
-                    entity.FechaNacimiento
+                    entity.FechaNacimiento,
+                    entity.TipoIdentificacion,
+                    entity.Identificacion
                 });
                 return await result;
             }
@@ -99,7 +101,9 @@ namespace WBL
                     entity.PrimerApellido,
                     entity.SegundoApellido,
                     entity.Edad,
-                    entity.FechaNacimiento
+                    entity.FechaNacimiento,
+                    entity.TipoIdentificacion,
+                    entity.Identificacion
                 });
                 return await result;
             }

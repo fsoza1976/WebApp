@@ -22,24 +22,28 @@
                                 <th>SegundoApellido</th>
                                 <th>Edad</th>
                                 <th>FechaNacimiento</th>
+                                <th>TipoIdentificacion</th>
+                                <th>Identificacion</th>
                                 <th>Accion</th>
                             </tr>
                         </thead>
                         <tbody>
                             @foreach (var item in Model.GridList)
                             {
-                                <tr>
-                                    <td>@item.IdEmpleado</td>
-                                    <td>@item.Nombre</td>
-                                    <td>@item.PrimerApellido</td>
-                                    <td>@item.SegundoApellido</td>
-                                    <td>@item.Edad</td>
-                                    <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
-                                    <td>
-                                        <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdEmpleado"><i class='bx bx-edit-alt'></i></a>
-                                        <button type="button" class="btn btn-danger" onclick="EmpleadoGrid.OnClickEliminar(@item.IdEmpleado)"><i class='bx bx-trash'></i></button>
-                                    </td>
-                                </tr>
+                            <tr>
+                                <td>@item.IdEmpleado</td>
+                                <td>@item.Nombre</td>
+                                <td>@item.PrimerApellido</td>
+                                <td>@item.SegundoApellido</td>
+                                <td>@item.Edad</td>
+                                <td>@item.FechaNacimiento.ToString("dd/MM/yyyy")</td>
+                                <td>@item.TipoIdentificacion</td>
+                                <td>@item.Identificacion</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdEmpleado"><i class='bx bx-edit-alt'></i></a>
+                                    <button type="button" class="btn btn-danger" onclick="EmpleadoGrid.OnClickEliminar(@item.IdEmpleado)"><i class='bx bx-trash'></i></button>
+                                </td>
+                            </tr>
                             }
                         </tbody>
                     </table>
