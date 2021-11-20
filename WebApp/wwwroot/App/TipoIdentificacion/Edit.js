@@ -1,6 +1,6 @@
 "use strict";
-var EmpleadoEdit;
-(function (EmpleadoEdit) {
+var TipoIdentificacionEdit;
+(function (TipoIdentificacionEdit) {
     var Formulario = new Vue({
         data: {
             Formulario: "#FormEdit"
@@ -10,5 +10,5 @@ var EmpleadoEdit;
         }
     });
     Formulario.$mount("#AppEdit");
-})(EmpleadoEdit || (EmpleadoEdit = {}));
+})(TipoIdentificacionEdit || (TipoIdentificacionEdit = {}));
 //# sourceMappingURL=Edit.js.map

@@ -1,4 +1,4 @@
-﻿namespace EmpleadoEdit
+﻿namespace TipoIdentificacionEdit
 {
     var Formulario = new Vue(
         {

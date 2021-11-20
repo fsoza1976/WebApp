@@ -1,4 +1,4 @@
-﻿namespace EmpleadoGrid {
+﻿namespace TipoIdentificacionGrid {
     declare var MensajeApp;
     if (MensajeApp != "")
     {
@@ -11,7 +11,7 @@
         ComfirmAlert("Desea eliminar el registro?", "Eliminar", "warning", "#3085d6", "#d33").then(result => {
         if(result.isConfirmed)
             {
-            window.location.href = "Empleado/Grid?handler=Eliminar&id=" + id;
+            window.location.href = "TipoIdentificacion/Grid?handler=Eliminar&id=" + id;
             }
         });
     }

@@ -116,8 +116,4 @@
     <TypeScriptCompile Include="wwwroot\Assets\Plugin\vue\VueLoaderTemplate.ts" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Pages\TipoIdentificacion\" />
-  </ItemGroup>
-
 </Project>

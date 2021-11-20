@@ -1,0 +1,48 @@
+﻿@page
+@model WebApp.Pages.TipoIdentificacion.GridModel
+@{
+}
+<div class="container-fluid">
+    <div class="card">
+        <div class="card-header">
+            Tipo Identificacion
+        </div>
+        <div class="card-body">
+            <a class="btn btn-primary" asp-page="Edit">
+                <i class='bx bxs-add-to-queue'></i>
+            </a>
+            <div class="row">
+                <div class="col-12">
+                    <table id="GridView" class="table table-bordered table table-striped table-hover">
+                        <thead>
+                            <tr>
+                                <th>IdTipoIdentificacion</th>
+                                <th>Tipo Identificacion</th>
+                                <th>Accion</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            @foreach (var item in Model.GridList)
+                            {
+                            <tr> <td>@item.IdTipoIdentificacion</td>
+                                <td>@item.Identificacion</td>
+                                <td>
+                                    <a class="btn btn-primary" asp-page="Edit" asp-route-id="@item.IdTipoIdentificacion"><i class='bx bx-edit-alt'></i></a>
+                                    <button type="button" class="btn btn-danger" onclick="TipoIdentificacionGrid.OnClickEliminar(@item.IdTipoIdentificacion)"><i class='bx bx-trash'></i></button>
+                                </td>
+                            </tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts{ 
+    <script>
+        var MensajeApp = "@Html.Raw(Model.Mensaje)";
+    </script>
+    <script defer src="~/App/TipoIdentificacion/Grid.js"></script>
+}

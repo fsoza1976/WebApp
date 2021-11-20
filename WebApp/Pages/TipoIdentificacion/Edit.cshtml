@@ -1,0 +1,34 @@
+﻿@page
+@model WebApp.Pages.TipoIdentificacion.EditModel
+@{
+}
+
+<div id="AppEdit" class="container">
+    <div class="card">
+        <div class="card-header">
+            @(Model.id.HasValue? "Actualizar":"Nuevo Tipo Identificacion")
+        </div>
+        <div class="card-body">
+            <form id="FormEdit" method="post">
+                <input type="hidden" asp-for="Entity.IdTipoIdentificacion" />
+                <div class="form-group mb-3">
+                    <label for="Entity.Identificacion" class="form-label">Identificacion</label>
+                    <input type="text" class="form-control" asp-for="Entity.Identificacion" maxlength="50" required>
+                </div>
+                
+                <div class="row">
+                    <div class="col-4">
+                        <button type="submit" class="btn btn-primary">
+                            @(Model.id.HasValue? "Actualizar":"Agregar")
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+@section Scripts
+{ 
+    <script defer src="~/App/TipoIdentificacion/Edit.js"></script>
+}
