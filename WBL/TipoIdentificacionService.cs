@@ -13,6 +13,7 @@ namespace WBL
         Task<DBEntity> Create(TipoIdentificacionEntity entity);
         Task<DBEntity> Delete(TipoIdentificacionEntity entity);
         Task<IEnumerable<TipoIdentificacionEntity>> Get();
+        Task<IEnumerable<TipoIdentificacionEntity>> GetLista();
         Task<TipoIdentificacionEntity> GetById(TipoIdentificacionEntity entity);
         Task<DBEntity> Update(TipoIdentificacionEntity entity);
     }
@@ -45,6 +46,21 @@ namespace WBL
 
         }
 
+        //Método GET Lista
+        public async Task<IEnumerable<TipoIdentificacionEntity>> GetLista()
+        {
+            try
+            {
+                var result = sql.QueryAsync<TipoIdentificacionEntity>("exp.IdentificacionLista");
+                return await result;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+
+        }
 
         //Método GET ID
         public async Task<TipoIdentificacionEntity> GetById(TipoIdentificacionEntity entity)

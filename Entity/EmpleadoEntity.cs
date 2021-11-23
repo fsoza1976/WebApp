@@ -20,6 +20,6 @@ namespace Entity
         public DateTime FechaNacimiento { get; set; }
         public int? TipoIdentificacion { get; set; }
         public virtual TipoIdentificacionEntity Id { get; set; }
-        public string Identificacion => Id?.Identificacion;
+        public string Identificacion { get; set; }
     }
 }

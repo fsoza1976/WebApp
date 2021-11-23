@@ -31,19 +31,12 @@
                     <label for="Entity.FechaNacimiento" class="form-label">Fecha Nacimiento</label>
                     <input type="date" class="form-control" asp-for="Entity.FechaNacimiento" required>
                 </div>
-                <!--<div class="form-group mb-3">
-                    <button class="btn btn-secondary dropdown-toggle" for="Entity.TipoIdentificacion" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                        Tipo Identificacion
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1" >
-                        <li><a class="dropdown-item" asp-for="Entity.TipoIdentificacion">1</a></li>
-                        <li><a class="dropdown-item" asp-for="Entity.TipoIdentificacion">2</a></li>
-                        <li><a class="dropdown-item" asp-for="Entity.TipoIdentificacion">3</a></li>
-                    </ul>
-                </div>-->
+                
                 <div class="form-group mb-3">
                     <label for="Entity.TipoIdentificacion" class="form-label">Tipo Identificacion</label>
-                    <input type="text" class="form-control" asp-for="Entity.TipoIdentificacion" required>
+                    <select asp-for="Entity.TipoIdentificacion" class="form-select"
+                            asp-items="@(new SelectList(Model.IdentificacionLista, "IdTipoIdentificacion", "Identificacion"))" required>
+                    </select>
                 </div>
                 <div class="form-group mb-3">
                     <label for="Entity.Identificacion" class="form-label">Identificacion</label>
